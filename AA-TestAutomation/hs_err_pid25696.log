@@ -1,0 +1,214 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 268435456 bytes for G1 virtual space
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Zero Based Compressed Oops mode in which the Java heap is
+#     placed in the first 32GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 32GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_windows.cpp:3466), pid=25696, tid=27536
+#
+# JRE version:  (16.0.1+9) (build )
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (16.0.1+9-24, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -ea -Dfile.encoding=Cp1252 -XX:+ShowCodeDetailsInExceptionMessages org.testng.remote.RemoteTestNG -serport 28362 -protocol json -d C:\Users\caquijan\eclipse-workspace\AA-TestAutomation\test-output C:\Users\caquijan\AppData\Local\Temp\testng-eclipse--491724779\testng-customsuite.xml
+
+Host: Intel(R) Core(TM) i7-8650U CPU @ 1.90GHz, 8 cores, 15G,  Windows 10 , 64 bit Build 19041 (10.0.19041.804)
+Time: Fri Apr 30 00:03:08 2021 Central Daylight Time elapsed time: 0.058356 seconds (0d 0h 0m 0s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00000201b9912750):  JavaThread "Unknown thread" [_thread_in_vm, id=27536, stack(0x000000f6d0a00000,0x000000f6d0b00000)]
+
+Stack: [0x000000f6d0a00000,0x000000f6d0b00000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x6687ca]
+V  [jvm.dll+0x7ca3c9]
+V  [jvm.dll+0x7cbb53]
+V  [jvm.dll+0x7cc1b3]
+V  [jvm.dll+0x242ea5]
+V  [jvm.dll+0x665589]
+V  [jvm.dll+0x65a175]
+V  [jvm.dll+0x2fc5ab]
+V  [jvm.dll+0x3037a6]
+V  [jvm.dll+0x352fee]
+V  [jvm.dll+0x35321f]
+V  [jvm.dll+0x2d3618]
+V  [jvm.dll+0x2d4854]
+V  [jvm.dll+0x79ccb1]
+V  [jvm.dll+0x360de1]
+V  [jvm.dll+0x77a990]
+V  [jvm.dll+0x3e55af]
+V  [jvm.dll+0x3e7081]
+C  [jli.dll+0x52fb]
+C  [ucrtbase.dll+0x21bb2]
+C  [KERNEL32.DLL+0x17034]
+C  [ntdll.dll+0x52651]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007ffa4466cbb8, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+
+Other Threads:
+  0x00000201b9961500 GCTaskThread "GC Thread#0" [stack: 0x000000f6d0b00000,0x000000f6d0c00000] [id=12052]
+  0x00000201b9973fc0 ConcurrentGCThread "G1 Main Marker" [stack: 0x000000f6d0c00000,0x000000f6d0d00000] [id=2192]
+  0x00000201b9974a30 ConcurrentGCThread "G1 Conc#0" [stack: 0x000000f6d0d00000,0x000000f6d0e00000] [id=23024]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffa43e444d7]
+
+VM state: not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00000201b990f140] Heap_lock - owner thread: 0x00000201b9912750
+
+Heap address: 0x0000000701200000, size: 4078 MB, Compressed Oops mode: Zero based, Oop shift amount: 3
+
+CDS archive(s) mapped at: [0x0000000000000000-0x0000000000000000-0x0000000000000000), size 0, SharedBaseAddress: 0x0000000800000000, ArchiveRelocationMode: 0.
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0, Narrow klass range: 0x0
+
+GC Precious Log:
+<Empty>
+
+Heap:
+ garbage-first heap   total 0K, used 0K [0x0000000701200000, 0x0000000800000000)
+  region size 2048K, 0 young (0K), 0 survivors (0K)
+
+[error occurred during error reporting (printing heap information), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffa442224ed]
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+Events (1 events):
+Event: 0.044 Loaded shared library C:\Program Files\Java\jdk-16.0.1\bin\java.dll
+
+
+Dynamic libraries:
+0x00007ff6761f0000 - 0x00007ff676200000 	C:\Program Files\Java\jdk-16.0.1\bin\javaw.exe
+0x00007ffa7baf0000 - 0x00007ffa7bce5000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ffa7a5a0000 - 0x00007ffa7a65d000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ffa79880000 - 0x00007ffa79b49000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ffa72a10000 - 0x00007ffa72a28000 	C:\Program Files\Java\jdk-16.0.1\bin\jli.dll
+0x00007ffa794c0000 - 0x00007ffa795c0000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ffa69300000 - 0x00007ffa69319000 	C:\Program Files\Java\jdk-16.0.1\bin\VCRUNTIME140.dll
+0x00007ffa7b4d0000 - 0x00007ffa7b57c000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ffa7b430000 - 0x00007ffa7b4ce000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ffa79c80000 - 0x00007ffa79d1c000 	C:\WINDOWS\System32\sechost.dll
+0x00007ffa7b300000 - 0x00007ffa7b42b000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ffa7a370000 - 0x00007ffa7a510000 	C:\WINDOWS\System32\USER32.dll
+0x00007ffa59fc0000 - 0x00007ffa5a25a000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.844_none_ca00b6081b84eb1d\COMCTL32.dll
+0x00007ffa79850000 - 0x00007ffa79872000 	C:\WINDOWS\System32\win32u.dll
+0x00007ffa7b580000 - 0x00007ffa7b5aa000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ffa79740000 - 0x00007ffa7984b000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ffa795c0000 - 0x00007ffa7965d000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ffa6bdd0000 - 0x00007ffa6bdda000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ffa7a190000 - 0x00007ffa7a1c0000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007ffa72900000 - 0x00007ffa7290c000 	C:\Program Files\Java\jdk-16.0.1\bin\vcruntime140_1.dll
+0x00007ffa52ac0000 - 0x00007ffa52b51000 	C:\Program Files\Java\jdk-16.0.1\bin\msvcp140.dll
+0x00007ffa43b60000 - 0x00007ffa4470b000 	C:\Program Files\Java\jdk-16.0.1\bin\server\jvm.dll
+0x00007ffa7b610000 - 0x00007ffa7b618000 	C:\WINDOWS\System32\PSAPI.DLL
+0x00007ffa51e70000 - 0x00007ffa51e97000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ffa68df0000 - 0x00007ffa68df9000 	C:\WINDOWS\SYSTEM32\WSOCK32.dll
+0x00007ffa7a1d0000 - 0x00007ffa7a23b000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ffa772f0000 - 0x00007ffa77302000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007ffa72970000 - 0x00007ffa7297a000 	C:\Program Files\Java\jdk-16.0.1\bin\jimage.dll
+0x00007ffa76e60000 - 0x00007ffa77044000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
+0x00007ffa69ca0000 - 0x00007ffa69ccc000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
+0x00007ffa796c0000 - 0x00007ffa79740000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ffa50bd0000 - 0x00007ffa50bf5000 	C:\Program Files\Java\jdk-16.0.1\bin\java.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Program Files\Java\jdk-16.0.1\bin;C:\WINDOWS\SYSTEM32;C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.19041.844_none_ca00b6081b84eb1d;C:\Program Files\Java\jdk-16.0.1\bin\server
+
+VM Arguments:
+jvm_args: -ea -Dfile.encoding=Cp1252 -XX:+ShowCodeDetailsInExceptionMessages 
+java_command: org.testng.remote.RemoteTestNG -serport 28362 -protocol json -d C:\Users\caquijan\eclipse-workspace\AA-TestAutomation\test-output C:\Users\caquijan\AppData\Local\Temp\testng-eclipse--491724779\testng-customsuite.xml
+java_class_path (initial): C:\Users\caquijan\eclipse\java-2021-03\eclipse\configuration\org.eclipse.osgi\471\0\.cp\lib\testng-remote.jar;C:\Users\caquijan\eclipse-workspace\AA-TestAutomation\target\test-classes;C:\Users\caquijan\eclipse-workspace\AA-TestAutomation\target\classes;C:\Users\caquijan\.m2\repository\io\rest-assured\rest-assured\4.3.3\rest-assured-4.3.3.jar;C:\Users\caquijan\.m2\repository\org\codehaus\groovy\groovy\3.0.7\groovy-3.0.7.jar;C:\Users\caquijan\.m2\repository\org\codehaus\groovy\groovy-xml\3.0.7\groovy-xml-3.0.7.jar;C:\Users\caquijan\.m2\repository\org\apache\httpcomponents\httpclient\4.5.3\httpclient-4.5.3.jar;C:\Users\caquijan\.m2\repository\org\apache\httpcomponents\httpcore\4.4.6\httpcore-4.4.6.jar;C:\Users\caquijan\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\Users\caquijan\.m2\repository\commons-codec\commons-codec\1.9\commons-codec-1.9.jar;C:\Users\caquijan\.m2\repository\org\apache\httpcomponents\httpmime\4.5.3\httpmime-4.5.3.jar;C:\Users\caquijan\.m2\repository\org\hamcrest\hamcrest\2.1\hamcrest-2.1.jar;C:\Users\caquijan\.m2\repository\org\ccil\cowan\tagsoup\tagsoup\1.2.1\tagsoup-1.2.1.jar;C:\Users\caquijan\.m2\repository\io\rest-assured\json-path\4.3.3\json-path-4.3.3.jar;C:\Users\caquijan\.m2\repository\org\codehaus\groovy\groovy-json\3.0.7\groovy-json-3.0.7.jar;C:\Users\caquijan\.m2\repository\io\rest-assured\rest-assured-common\4.3.3\rest-assured-common-4.3.3.jar;C:\Users\caquijan\.m2\repository\io\rest-assured\xml-path\4.3.3\xml-path-4.3.3.jar;C:\Users\caquijan\.m2\repository\org\apache\commons\commons-lang3\3.11\commons-lang3-3.11.jar;C:\Users\caquijan\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\2.3.3\jakarta.xml.bind-api-2.3.3.jar;C:\Users\caquijan\.m2\repository\jakarta\activation\jakarta.activation-api\1.2.2\jakarta.activation-api-1.2.2.jar;C:\Users\caquijan\.m2\repository\com\sun\xml\bind\jaxb-impl\2.3.3\jaxb-impl-2.3.3.jar;C:\Users\caquijan\.m2\repository\org\testng\testng\7.4.0\t
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 4                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 2                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 8                                         {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 2097152                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 268435456                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 4276092928                                {product} {ergonomic}
+   size_t MinHeapDeltaBytes                        = 2097152                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5839372                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122909434                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122909434                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+     bool ShowCodeDetailsInExceptionMessages       = true                                   {manageable} {command line}
+   size_t SoftMaxHeapSize                          = 4276092928                             {manageable} {ergonomic}
+     bool UseCompressedClassPointers               = true                           {product lp64_product} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags
+ #1: stderr all=off uptime,level,tags
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk-16.0.1
+PATH=C:/Program Files/Java/jdk-16.0.1/bin/server;C:/Program Files/Java/jdk-16.0.1/bin;C:\Program Files (x86)\Microsoft SDKs\Azure\CLI2\wbin;C:\Program Files\Common Files\Microsoft Shared\Microsoft Online Services;C:\Program Files (x86)\Common Files\Microsoft Shared\Microsoft Online Services;C:\windows\system32;C:\windows;C:\windows\System32\Wbem;C:\windows\System32\WindowsPowerShell\v1.0\;C:\windows\System32\OpenSSH\;C:\Program Files\PuTTY\;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\PSTools;C:\Program Files\Microsoft\Web Platform Installer\;C:\Program Files\Microsoft Service Fabric\bin\Fabric\Fabric.Code;C:\Program Files\Microsoft SDKs\Service Fabric\Tools\ServiceFabricLocalClusterManager;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Program Files\PowerShell\7\;C:\Program Files\WindowsPowerShell\Scripts;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files (x86)\dotnet\;C:\Program Files\Microsoft Network Monitor 3\;C:\Program Files\Git\cmd;C:\Program Files\Java\jdk-16.0.1\bin;C:\Users\caquijan\AppData\Local\Programs\Python\Python38-32\Scripts\;C:\Users\caquijan\AppData\Local\Programs\Python\Python38-32\;C:\Users\caquijan\AppData\Local\Programs\Python\Python37-32\Scripts\;C:\Users\caquijan\AppData\Local\Programs\Python\Python37-32\;C:\Users\caquijan\AppData\Local\Microsoft\WindowsApps;C:\Users\caquijan\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\caquijan\AppData\Local\Programs\Fiddler;C:\Users\caquijan\.dotnet\tools;C:\Users\caquijan\AppData\Roaming\npm;C:\Users\caquijan\ServiceBus\ServiceBusOneTool;C:\apache-maven-3.6.3\bin;C:\Users\caquijan\AppData\Local\Microsoft\WindowsApps;C:\Users\caquijan\AppData\Local\GitHubDesktop\bin;C:\Program Files\OpenSSL-Win64\bin;C:\Users\caquijan\.dotn
+USERNAME=caquijan
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 142 Stepping 10, GenuineIntel
+
+
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 10 , 64 bit Build 19041 (10.0.19041.804)
+OS uptime: 1 days 7:40 hours
+Hyper-V role detected
+
+CPU: total 8 (initial active 8) (4 cores per cpu, 2 threads per core) family 6 model 142 stepping 10 microcode 0xe0, cx8, cmov, fxsr, ht, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, avx, avx2, aes, erms, clmul, bmi1, bmi2, rtm, adx, fma, vzeroupper, clflush, clflushopt, hv
+
+Memory: 4k page, system-wide physical 16305M (2872M free)
+TotalPageFile size 25521M (AvailPageFile size 235M)
+current process WorkingSet (physical memory assigned to process): 10M, peak: 10M
+current process commit charge ("private bytes"): 60M, peak: 316M
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (16.0.1+9-24) for windows-amd64 JRE (16.0.1+9-24), built on Mar 26 2021 19:31:42 by "mach5one" with MS VC++ 16.7 (VS2019)
+
+END.
